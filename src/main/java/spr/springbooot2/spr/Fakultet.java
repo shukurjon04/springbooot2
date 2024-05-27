@@ -1,0 +1,20 @@
+package spr.springbooot2.spr;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Entity
+public class Fakultet {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Column(nullable = false)
+    private String name;
+    @ManyToOne
+    private Univercity univercity;
+}
